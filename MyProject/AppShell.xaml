@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyProject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyProject"
+    Shell.FlyoutBehavior="Flyout">
+   
+    <ShellContent
+        Title="Ana Sayfa"
+        Icon="home.png"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Icon="credit.png"
+        Title="Kredi Hesaplama"
+        ContentTemplate="{DataTemplate local:Kredi_Hesaplama}"
+        Route="Kredi Hesaplama" />
+
+    <ShellContent
+        Icon="heart.png"
+        Title="Vucut kitle index"
+        ContentTemplate="{DataTemplate local:Vucut_Kitle_Indeksi}"
+        Route="Vucut_Kitle_Indeksi" />
+
+    <ShellContent
+        Icon="colors.png"
+        Title="Renk Secici"
+        ContentTemplate="{DataTemplate local:Renk_Secici}"
+        Route="Renk Secici" />
+
+    <ShellContent
+        Icon="list.png"
+        Title="Yapilacaklar"
+        ContentTemplate="{DataTemplate local:Yapilacaklar}"
+        Route="Yapilacaklar" />
+
+   
+
+
+</Shell>

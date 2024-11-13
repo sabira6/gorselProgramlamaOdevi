@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyProject.Vucut_Kitle_Indeksi"
+             Title="Vucut_Kitle_Indeksi">
+    <ContentPage.Resources>
+
+        <Color x:Key="prussiaBlue">#003459</Color>
+        <Color x:Key="ColinaBlue">#00A8E8</Color>
+        <Color x:Key ="RickBlack">#00171f</Color>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="TextColor" Value="{StaticResource RickBlack}"/>
+
+        </Style>
+        <Style x:Key="TitelStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+            <Setter Property="FontSize" Value="Header"/>
+        </Style>
+
+        <Style x:Key="ValueStyle" TargetType="Label"
+               BasedOn="{StaticResource LabelStyle}">
+            <Setter Property="FontSize" Value="Title"/>
+            <Setter Property="TextColor" Value="{StaticResource ColinaBlue}"/>
+        </Style>
+
+        <Style TargetType="Slider">
+            <Setter Property="ThumbColor" Value="{StaticResource prussiaBlue}"/>
+            <Setter Property="MaximumTrackColor" Value="{StaticResource prussiaBlue}"/>
+            <Setter Property="MaximumTrackColor" Value="{StaticResource ColinaBlue}"/>
+        </Style>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,Auto,*,Auto"
+          RowSpacing="5" ColumnSpacing="5" Margin="20" >
+        <Label Text="Vki=Kg/(boy*boy)" Style="{StaticResource TitelStyle}" VerticalOptions="Center" Grid.Row="0" Grid.Column="2"/>
+
+
+
+        <Label Text="Kilonuz(Kg):" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="End"/>
+
+       
+
+        <Label  Text="{Binding Source={x:Reference WeightSlider},Path=Value,
+                StringFormat='{0:F0}(KG)'}" Style="{StaticResource ValueStyle}" Grid.Row="1" Grid.Column="1" TextDecorations="Underline"/>
+        <Slider x:Name="WeightSlider"
+                    Maximum="300"
+                    Minimum="40" Value="{Binding Weight}" Grid.Row="1" Grid.Column="2" WidthRequest="200"/>
+        
+        
+        <Label Text="boyunuz(cm):" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="End"/>
+      
+
+        <Label  Text="{Binding Source={x:Reference HeightSlider},Path=Value,
+                StringFormat='{0:F0}(CM)'}" Style="{StaticResource ValueStyle}" Grid.Row="2" Grid.Column="1" TextDecorations="Underline"/>
+        <Slider x:Name="HeightSlider"
+                    Maximum="220"
+                    Minimum="40" Value="{Binding Height}" Grid.Row="2" Grid.Column="2" WidthRequest="200"/>
+       
+
+     
+
+
+
+
+       
+
+         
+     
+        <Label Text="Vki: " 
+                   Style="{StaticResource LabelStyle}" Grid.Row="3" Grid.Column="0"  HorizontalOptions="End"/>
+
+        <Label Text="{Binding Vki}" Style="{StaticResource LabelStyle}" Grid.Row="3" Grid.Column="1"/>
+
+        <Label Text="{Binding Classifiction}" Style="{StaticResource LabelStyle}"  Grid.Row="3" Grid.Column="2"/>
+
+      
+
+
+    </Grid>
+   
+
+   
+
+    
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyProject.Yapilacaklar"
+             Title="Yapilacaklar">
+    <ScrollView>
+        
+        <VerticalStackLayout>
+        <Border BackgroundColor="Black" HeightRequest="50" WidthRequest="1000" Padding="5" Margin="5"  >
+            <Label Text="Yapilacak" HorizontalOptions="Start" TextColor="Red"/>
+        </Border>
+        <Grid>
+
+            <CollectionView x:Name ="veiw" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto" ColumnDefinitions="Auto,*,Auto,Auto">
+                                <CheckBox BindingContext="{x:Reference Sinav}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="End" />
+
+
+                            <Label Text="{Binding Sinav}" Grid.Row="0" Grid.Column="1"/>
+
+                            <ImageButton  Source="pencil.png"   Grid.Row="0" Grid.Column="2" Clicked="EditComand_Clicked" CommandParameter="{Binding ID}" />
+                            <ImageButton   Source="trash.png" Grid.Row="0" Grid.Column="3" Clicked="Delete_Clicked" CommandParameter="{Binding ID}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <!--,,,,,,,,-->
+            <Grid  Grid.Row="1" ColumnDefinitions="*,*" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="20">
+                <ImageButton Source="add.png" HeightRequest="10" Grid.Column="0" Clicked="AddButton_Clicked"/>
+                <ImageButton Source="save.png" HeightRequest="10" Grid.Column="1" Clicked="SaveComanda_Clicked"/>
+            </Grid>
+        </VerticalStackLayout>
+
+     
+    </ScrollView>
+   
+</ContentPage>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyProject.Renk_Secici"
+             Title="Renk Secici">
+    <ContentPage.Resources>
+        <Color  x:Key="Primary">#ab3527</Color>
+        <Color  x:Key="Secondary">#0000FF</Color>
+        <Color  x:Key="Tertiary">#00ff00</Color>
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+        <VerticalStackLayout>
+            <Grid  BackgroundColor="Black"  Margin="10,10,10,10">
+                <Frame Margin="10,0,10,0" VerticalOptions="Start">
+                <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                    <Label FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                       Text="Renk Seçici"/>
+
+                    <Label Text="Kirmiz Ton:"/>
+                    <Slider x:Name="sldRed"   
+                        MaximumTrackColor="{StaticResource Primary}"
+                        MinimumTrackColor="{StaticResource Primary}"
+                         ThumbColor="{StaticResource Primary}" ValueChanged="Slider_ValueChanged"/>
+
+                    <Label Text="Yeşil Ton:"/>
+                    <Slider x:Name="sldGreen"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Tertiary}"
+                         ThumbColor="{StaticResource Tertiary}" ValueChanged="Slider_ValueChanged"/>
+
+
+                    <Label Text="Mavi Ton:"/>
+                    <Slider x:Name="sldBlue"
+                        MaximumTrackColor="{StaticResource Secondary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                         ThumbColor="{StaticResource Secondary}" ValueChanged="Slider_ValueChanged"/>
+
+                    <Frame CornerRadius="25"  HorizontalOptions="Center" >
+                        <HorizontalStackLayout>
+                            <Label x:Name ="lblHex" HorizontalTextAlignment="End" 
+                               Text="Hex Value:#000000" VerticalOptions="Center"/>
+
+
+                            <ImageButton Margin="10,0,0,0"  HeightRequest="25"
+                                     Source="copy.png" 
+                                     VerticalOptions="Center" WidthRequest="25" Clicked="ImageButton_Clicked_1"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+                    <Button x:Name="btnRandom" BackgroundColor="{StaticResource Primary}"
+                        Text=" Random" Clicked="BtnRandom_Clicked"/>
+                </VerticalStackLayout>
+
+            </Frame> 
+
+            </Grid>
+
+            <Grid x:Name="Container" BackgroundColor="Black" HeightRequest="400">
+              
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
